@@ -1,0 +1,31 @@
+﻿
+pathon参考资料
+https://blog.csdn.net/luanpeng825485697/article/details/78347433
+
+
+1.pathon集成编译环境
+参考网站：
+https://baijiahao.baidu.com/s?id=1597188546283669011&wfr=spider&for=pc
+地址: https://www.jetbrains.com/pycharm/
+
+2.pathon 安装
+
+
+3.Selenium 安装
+
+Htmltestrunner
+http://tungwaiyip.info/software/HTMLTestRunner.html
+首先，下载HTMLTestRuner.py文件。 
+源地址：http://tungwaiyip.info/software/HTMLTestRunner.html 
+这是针对Python2.7版本,那么对于Python3.x的使用,需要改动几处。同时谢谢 http://www.bubuko.com/infodetail-529431.html的分享。 
+具体改动如下： 
+第94行，将import StringIO修改成import io 
+第539行，将self.outputBuffer = StringIO.StringIO()修改成self.outputBuffer= io.StringIO() 
+第631行，将print >> sys.stderr, ‘\nTime Elapsed: %s‘ %(self.stopTime-self.startTime)修改成print(sys.stderr, ‘\nTimeElapsed: %s‘ % (self.stopTime-self.startTime)) 
+第642行，将if not rmap.has_key(cls):修改成if notcls in rmap: 
+第766行，将uo = o.decode(‘latin-1‘)修改成uo = e 
+第775行，将ue = e.decode(‘latin-1‘)修改成ue = e 
+第778行，将output = saxutils.escape(uo+ue),修改成output = saxutils.escape(str(uo)+str(ue)),
+将上述几处改动，保存成功后，再将HTMLTestRunner.py放到C:\Python34\Lib目录中，检验是否加载成功，在Python IDLE 中输入 
+import HTMLTestRunner 
+若无报错，那么加载成功。
